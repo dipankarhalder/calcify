@@ -1,0 +1,287 @@
+@import "../core/colors.scss";
+@import "../core/mixins.scss";
+
+.app_common_wrrap {
+  @include width();
+  @include box();
+  height: 100vh;
+  padding: 40px 13rem;
+
+  background: {
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+}
+
+.app_patient_content {
+  @extend .app_common_wrrap;
+
+  background: {
+    image: url("../../public/hero_patient_auth.jpg");
+  }
+}
+
+.app_doctor_content {
+  @extend .app_common_wrrap;
+
+  background: {
+    image: url("../../public/hero_doctor_auth.jpg");
+  }
+}
+
+.app_admin_content {
+  @extend .app_common_wrrap;
+
+  background: {
+    image: url("../../public/hero_admin_auth.jpeg");
+  }
+}
+
+.app_forgot_pass {
+  @extend .app_common_wrrap;
+
+  background: {
+    image: url("../../public/hero_admin_auth.jpeg");
+  }
+}
+
+.pat {
+  height: 1000px;
+}
+
+.app_log_center {
+  @include width();
+  @include box();
+  height: calc(100vh - 90px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  @media (max-width: 980px) {
+    justify-content: center;
+  }
+}
+
+.app_auth_white_sec {
+  @include box();
+  @include radius(8px);
+  width: 540px;
+  padding: 46px 80px;
+  background: $white;
+}
+
+.app_top_links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  p {
+    @include font(13px, 500);
+  }
+
+  ul {
+    @include auto();
+    margin-left: 20px;
+    @include radius(40px);
+    overflow: hidden;
+
+    li {
+      @include auto();
+      cursor: pointer;
+      @include font(14px, 700);
+
+      background: {
+        color: darken($gray, 3%);
+      }
+
+      a {
+        @include auto();
+        color: $blue;
+      }
+
+      &:first-child a {
+        padding: 8px 16px 8px 26px;
+      }
+
+      &:last-child a {
+        padding: 8px 26px 8px 16px;
+      }
+
+      &.actvTab a {
+        color: $white;
+        background: {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+.auth_form {
+  @include width();
+  margin-top: 40px;
+}
+
+.app_auth_field {
+  @include width();
+  margin-bottom: 16px;
+
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    & > span {
+      @include inwidth(left, 90px);
+      @include font(15px, 500);
+      margin-right: 10px;
+      color: $text;
+    }
+
+    input {
+      @include font(15px, 600);
+      @include inwidth(right, calc(100% - 100px));
+      padding: 10px 18px;
+      @include radius(5px);
+      border: 1px solid $border;
+    }
+
+    b {
+      @include font(15px, 600);
+      color: $red;
+    }
+    em {
+      @include font(15px, 600);
+      font-style: normal;
+    }
+  }
+
+  p {
+    margin-left: 100px;
+    width: calc(100% - 100px);
+  }
+}
+
+.app_auth_btn {
+  margin-left: 100px;
+  float: left;
+
+  button {
+    @include auto();
+    @include font(13px, 700);
+    padding: 0px 24px;
+    height: 36px;
+    border: 0px solid $trans;
+    @include radius(5px);
+    cursor: pointer;
+    color: $white;
+
+    background: {
+      color: $blue;
+    }
+  }
+}
+
+.app_load_btn{
+  @include auto();
+  @include font(13px, 700);
+  padding: 0px 16px;
+  height: 36px;
+  line-height: 36px;
+  border: 0px solid $trans;
+  @include radius(5px);
+  cursor: pointer;
+  color: $black;
+  background: {
+    color: darken($gray, 10%);
+  }
+}
+
+.reg_link_admin {
+  @include auto();
+
+  a {
+    @include auto();
+    @include font(13px, 700);
+    padding: 0px 24px;
+    height: 36px;
+    line-height: 36px;
+    color: $blue;
+    text-decoration: underline;
+  }
+}
+
+.reg_link {
+  @include auto();
+  margin-left: 10px;
+
+  & > span {
+    cursor: pointer;
+  }
+
+  a {
+    @include auto();
+    @include font(13px, 700);
+    padding: 0px 16px;
+    height: 36px;
+    line-height: 36px;
+    color: $blue;
+  }
+}
+
+.forg_link {
+  @include width();
+  margin-top: 50px;
+
+  a {
+    @include auto();
+    @include font(13px, 700);
+    padding: 0px;
+    color: $blue;
+  }
+}
+
+.auth_succ_msg {
+  @include width();
+
+  & > span {
+    margin-bottom: 20px;
+    @include width();
+
+    & > svg {
+      color: $green;
+      position: relative;
+      left: 50%;
+      margin-left: -50px;
+      @include icons(100px);
+    }
+  }
+
+  h4,
+  p {
+    @include width();
+    text-align: center;
+  }
+
+  h4 {
+    @include font(18px, 700);
+    margin-bottom: 6px;
+    color: $green;
+  }
+
+  p {
+    @include font(15px, 600);
+    color: $text;
+
+    &:last-child {
+      margin-top: 20px;
+    }
+
+    a {
+      width: auto;
+      color: $blue;
+      @include font(14px, 700);
+    }
+  }
+}

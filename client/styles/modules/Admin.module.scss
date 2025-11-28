@@ -1,0 +1,90 @@
+@import "../core/colors.scss";
+@import "../core/mixins.scss";
+
+.wrrap{
+  @include width();
+  margin-top: 20px;
+}
+.selectCategory{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  @include width();
+  margin-bottom: 20px;
+  p{
+    @include font(14px, 700);
+    @include auto();
+    color: $text;
+    margin-right: 30px;
+  }
+  ul{
+    @include auto();
+    li{
+      @include auto();
+      padding: 5px 16px;
+      @include radius(4px);
+      background: darken($lgray, 6%);
+      @include font(14px, 700);
+      margin-left: 8px;
+      cursor: pointer;
+      &.active_item{
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+}
+.half_place{
+  padding: 18px 24px;
+  @include box();
+  @include radius(4px);
+  @include inwidth(left, 350px);
+  background: lighten($border, 10%);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  h4{
+    @include width();
+    @include font(15px, 700);
+    margin-bottom: 10px;
+  }
+  .app_auth_field{
+    @include width();
+    input{
+      @include font(15px, 600);
+      @include inwidth(left, 100%);
+      padding: 10px 18px;
+      @include radius(5px);
+      margin-bottom: 14px;
+      border: 1px solid $border;
+    }
+  }
+  .app_auth_btn{
+    @include width();
+    button {
+      @include auto();
+      @include font(13px, 700);
+      padding: 0px 24px;
+      height: 36px;
+      border: 0px solid $trans;
+      @include radius(5px);
+      cursor: pointer;
+      color: $white;
+      background: {
+        color: $blue;
+      }
+    }
+  }
+}
+.right_half{
+  @include inwidth(right, calc(100% - 370px));
+  p{
+    @include auto();
+    @include font(15px, 700);
+    color: $text;
+    padding: 9px 22px;
+    border: 1px solid $border;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    @include radius(4px);
+  }
+}

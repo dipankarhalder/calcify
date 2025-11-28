@@ -1,0 +1,771 @@
+@import "../core/colors.scss";
+@import "../core/mixins.scss";
+
+.common_bg_img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50%;
+  z-index: -1;
+  height: 100vh;
+  background: {
+    size: cover;
+    position: center top;
+    repeat: no-repeat;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 260px;
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+  @media (max-width: 1400px) {
+    width: 40%;
+  }
+  @media (max-width: 1120px) {
+    width: 32%;
+  }
+  @media (max-width: 980px) {
+    width: 0px;
+  }
+}
+.background_reg_doc {
+  @extend .common_bg_img;
+  background: {
+    image: url("../../public/reg_doc.jpg");
+  }
+}
+.background_reg_pat {
+  @extend .common_bg_img;
+  background: {
+    image: url("../../public/reg_pat.jpg");
+  }
+}
+.app_doctor_content_wrapp {
+  @include width();
+  @include box();
+  height: 100vh;
+  padding: 40px 13rem;
+  position: relative;
+  z-index: 1;
+}
+.app_reg_white_sec {
+  @include box();
+  width: 480px;
+  padding: 46px 0px;
+  h2 {
+    @include font(16px, 700);
+    color: $text;
+    margin-bottom: 36px;
+    margin-left: 110px;
+  }
+  h5 {
+    @include inwidth(left, calc(100% - 100px));
+    margin-bottom: 30px;
+    margin-left: 110px;
+    & > span {
+      @include font(13px, 700);
+      @include auto();
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $blue;
+      cursor: pointer;
+      & > svg {
+        margin-right: 4px;
+      }
+    }
+    b {
+      float: right;
+      @include font(13px, 700);
+      color: lighten($text, 20%);
+    }
+  }
+}
+.reg_form,
+.steps_forms,
+.success_screen {
+  @include width();
+}
+.app_half_field {
+  @include width();
+  position: relative;
+  margin-bottom: 20px;
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    & > span {
+      @include inwidth(left, 100px);
+      @include font(15px, 500);
+      text-align: right;
+      margin-right: 10px;
+      color: $text;
+      & > b {
+        color: $red;
+      }
+    }
+    p {
+      float: left;
+      width: calc(100% - 110px);
+      margin-left: 110px;
+      @include font(13px, 600);
+      height: 24px;
+      line-height: 24px;
+      color: $red;
+    }
+    .helf_div {
+      @include inwidth(left, 37%);
+      position: relative;
+      &:nth-child(2) {
+        margin-right: 3%;
+      }
+      input,
+      select {
+        @include font(15px, 600);
+        @include inwidth(left, 100%);
+        padding: 10px 14px;
+        @include radius(5px);
+        border: 1px solid $border;
+      }
+      select {
+        padding: 7px 20px 7px 18px;
+      }
+      b {
+        position: absolute;
+        right: 18px;
+        top: 11px;
+        @include font(14px, 600);
+      }
+    }
+  }
+}
+.app_auth_btn {
+  float: left;
+  margin-left: 110px;
+  button {
+    @include auto();
+    @include font(13px, 700);
+    padding: 0px 24px;
+    height: 36px;
+    border: 0px solid $trans;
+    @include radius(5px);
+    cursor: pointer;
+    color: $white;
+    background: {
+      color: $blue;
+    }
+  }
+}
+.app_auth_btn_admin {
+  float: left;
+  margin-left: 200px;
+  button {
+    @include auto();
+    @include font(13px, 700);
+    padding: 0px 24px;
+    height: 36px;
+    border: 0px solid $trans;
+    @include radius(5px);
+    cursor: pointer;
+    color: $white;
+    background: {
+      color: $blue;
+    }
+  }
+}
+.app_reg_field {
+  @include width();
+  margin-bottom: 20px;
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    & > span {
+      @include inwidth(left, 100px);
+      @include font(15px, 500);
+      text-align: right;
+      margin-right: 10px;
+      color: $text;
+      & > b {
+        color: $red;
+      }
+    }
+    input,
+    textarea,
+    select {
+      @include font(15px, 600);
+      @include inwidth(right, calc(100% - 110px));
+      padding: 10px 14px;
+      @include radius(5px);
+      border: 1px solid $border;
+    }
+    select {
+      padding: 7px 20px 7px 11px;
+    }
+    textarea {
+      height: 70px;
+      resize: none;
+    }
+    p {
+      @include width();
+      @include font(13px, 600);
+      height: 24px;
+      line-height: 24px;
+      color: $red;
+    }
+    .itemEye {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      cursor: pointer;
+      @include icons(18px);
+      & > svg {
+        @include icons(18px);
+      }
+    }
+  }
+  .typDocItems {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    & > span {
+      @include inwidth(left, 100px);
+      @include font(15px, 500);
+      text-align: right;
+      margin-right: 10px;
+      color: $text;
+      & > b {
+        color: $red;
+      }
+    }
+    & > ul {
+      @include inwidth(right, calc(100% - 110px));
+      & > li {
+        @include auto();
+        @include font(13px, 700);
+        padding: 5px 16px 5px 28px;
+        @include radius(50px);
+        margin-right: 4px;
+        border: 1px solid $border;
+        position: relative;
+        cursor: pointer;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 9px;
+          top: 9px;
+          width: 10px;
+          height: 10px;
+          @include radius(10px);
+          background: $border;
+        }
+        &.typDoctr {
+          color: $blue;
+          border: 1px solid $blue;
+          &:after {
+            background: $blue;
+          }
+        }
+      }
+    }
+  }
+  p {
+    margin-left: 110px;
+    width: calc(100% - 110px);
+  }
+}
+.radio_check_common {
+  @include auto();
+  padding: 5px 12px 5px 29px;
+  @include font(13px, 700);
+  @include radius(5px);
+  margin-right: 6px;
+  margin-bottom: 8px;
+  position: relative;
+  cursor: pointer;
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    @include radius(2px);
+  }
+  &:after {
+    left: 11px;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+  }
+  &:before {
+    left: 8px;
+    top: 7px;
+    width: 14px;
+    height: 14px;
+  }
+}
+.lineItemsBorder {
+  @include width();
+  height: 40px;
+}
+.app_reg_short_items {
+  @include width();
+  margin-bottom: 6px;
+  .radio_check_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    & > span {
+      @include inwidth(left, 86px);
+      @include font(15px, 700);
+      text-align: right;
+      margin-right: 14px;
+      color: $text;
+    }
+    .cover_radio_check {
+      @include inwidth(right, calc(100% - 100px));
+      input[type="checkbox"] {
+        display: none;
+      }
+    }
+    .radio_check_actv {
+      color: $blue;
+      @extend .radio_check_common;
+      border: 1px solid $blue;
+      &:after {
+        background: $blue;
+      }
+      &:before {
+        background: $trans;
+        border: 1px solid $blue;
+      }
+    }
+    .radio_check_nonactv {
+      color: $text;
+      @extend .radio_check_common;
+      border: 1px solid $border;
+      &:after {
+        background: $trans;
+      }
+      &:before {
+        background: $trans;
+        border: 1px solid $border;
+      }
+    }
+  }
+}
+.backBtn {
+  @include auto();
+  @include font(13px, 700);
+  padding: 0px 23px;
+  margin-right: 10px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid $border;
+  @include radius(5px);
+  background: lighten($border, 8%);
+  cursor: pointer;
+  color: $blue;
+  transition: 0.5s;
+  &:hover {
+    transition: 0.5s;
+    background: lighten($border, 4%);
+  }
+}
+.btnCommn {
+  @include auto();
+  @include font(13px, 700);
+  padding: 0px 24px;
+  border: 0px solid $trans;
+  height: 36px;
+  line-height: 36px;
+  @include radius(5px);
+  cursor: pointer;
+}
+.nextBtn {
+  @extend .btnCommn;
+  color: $white;
+  background: {
+    color: $blue;
+  }
+}
+.skipBtn {
+  @extend .btnCommn;
+  margin-left: 16px;
+  color: $blue;
+  background: {
+    color: $white;
+  }
+}
+.disabledBtn {
+  @extend .btnCommn;
+  color: $white;
+  background: {
+    color: $bgray;
+  }
+}
+.reg_link {
+  @include auto();
+  margin-top: 60px;
+  margin-left: 110px;
+  a {
+    @include auto();
+    @include font(13px, 700);
+    padding: 0px;
+    height: 36px;
+    line-height: 36px;
+    color: $blue;
+    text-decoration: underline;
+  }
+}
+.reg_link_patient {
+  @include auto();
+  margin-top: 30px;
+  margin-left: 110px;
+  a {
+    @include auto();
+    @include font(13px, 700);
+    padding: 0px;
+    height: 20px;
+    line-height: 20px;
+    color: $blue;
+    text-decoration: underline;
+  }
+}
+.reg_link_admin {
+  @include auto();
+  a {
+    @include auto();
+    @include font(13px, 700);
+    padding: 0px 24px;
+    height: 36px;
+    line-height: 36px;
+    color: $blue;
+    text-decoration: underline;
+  }
+}
+.all_inputs_views {
+  @include width();
+  margin-bottom: 40px;
+  h4 {
+    margin-left: 100px;
+    margin-top: 30px;
+    @include font(15px, 700);
+    color: $blue;
+    margin-bottom: 10px;
+    @include inwidth(left, calc(100% - 100px));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:first-child {
+      margin-top: 0px;
+    }
+    & > span {
+      display: flex;
+      width: auto;
+      justify-content: center;
+      align-items: center;
+      margin-left: 30px;
+      height: 24px;
+      cursor: pointer;
+      font-size: 13px;
+      & > svg {
+        @include icons(16px);
+        margin-right: 6px;
+      }
+    }
+  }
+  .viewList {
+    @include width();
+    margin-bottom: 7px;
+    & > span {
+      @include font(15px, 600);
+      @include inwidth(left, 90px);
+      margin-right: 10px;
+      text-align: right;
+      color: $text;
+    }
+    p {
+      @include font(15px, 700);
+      color: $black;
+      @include inwidth(right, calc(100% - 100px));
+      & > b {
+        margin-left: 0px;
+        color: $red;
+      }
+    }
+  }
+}
+.all_inputs_views_patient {
+  @include width();
+  margin-bottom: 40px;
+  h4 {
+    margin-left: 100px;
+    margin-top: 16px;
+    @include font(15px, 700);
+    color: $blue;
+    margin-bottom: 6px;
+    @include inwidth(left, calc(100% - 100px));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:first-child {
+      margin-top: 0px;
+    }
+    & > span {
+      display: flex;
+      width: auto;
+      justify-content: center;
+      align-items: center;
+      margin-left: 30px;
+      height: 24px;
+      cursor: pointer;
+      font-size: 13px;
+      & > svg {
+        @include icons(16px);
+        margin-right: 6px;
+      }
+    }
+  }
+  .viewList {
+    @include width();
+    margin-bottom: 4px;
+    & > span {
+      @include font(15px, 600);
+      @include inwidth(left, 144px);
+      margin-right: 10px;
+      text-align: right;
+      color: $text;
+    }
+    p {
+      @include font(15px, 700);
+      color: $black;
+      @include inwidth(right, calc(100% - 154px));
+      & > b {
+        margin-left: 16px;
+        color: $red;
+      }
+      & > em {
+        float: left;
+        font-style: normal;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.exmlft {
+  float: left;
+  margin-left: 154px;
+  color: $red;
+  margin-bottom: 10px;
+  @include font(13px, 600);
+}
+.success_screen {
+  h3 {
+    @include width();
+    @include font(22px, 700);
+    text-align: center;
+    margin-bottom: 40px;
+    color: $blue;
+  }
+  p {
+    @include width();
+    @include font(14px, 600);
+    text-align: center;
+    margin-bottom: 6px;
+    color: $text;
+    clear: both;
+  }
+  a {
+    @include auto();
+    @include font(17px, 700);
+    color: $blue;
+    clear: both;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.admin_page_wrapper {
+  @include width();
+  height: 100vh;
+  padding: 40px 13rem;
+  @include box();
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: {
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+    image: url("../../public/hero_admin_auth.jpeg");
+  }
+  .admin_inner_wrapper {
+    padding: 46px 80px;
+    background: $white;
+    @include radius(4px);
+    box-shadow: $shadow;
+    @include inwidth(left, 560px);
+    .headElm {
+      @include font(14px, 600);
+      text-align: right;
+      color: $text;
+      margin-bottom: 40px;
+    }
+    h2 {
+      @include font(24px, 700);
+      color: $text;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    h3 {
+      @include font(16px, 700);
+      color: $text;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+    .app_half_field {
+      .helf_div {
+        width: 35%;
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
+    .all_inputs_views_admin {
+      @include width();
+      margin-bottom: 40px;
+      h4 {
+        margin-left: 200px;
+        margin-top: 30px;
+        @include font(15px, 700);
+        color: $blue;
+        margin-bottom: 10px;
+        @include inwidth(left, calc(100% - 300px));
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:first-child {
+          margin-top: 0px;
+        }
+        & > span {
+          display: flex;
+          width: auto;
+          justify-content: center;
+          align-items: center;
+          margin-left: 30px;
+          height: 24px;
+          cursor: pointer;
+          font-size: 13px;
+          & > svg {
+            @include icons(16px);
+            margin-right: 6px;
+          }
+        }
+      }
+      .viewListadmin {
+        @include width();
+        margin-bottom: 7px;
+        & > span {
+          @include font(15px, 600);
+          @include inwidth(left, 190px);
+          margin-right: 10px;
+          text-align: right;
+          color: $text;
+        }
+        p {
+          @include font(15px, 700);
+          color: $black;
+          @include inwidth(right, calc(100% - 200px));
+          & > b {
+            margin-left: 16px;
+            color: $red;
+          }
+        }
+      }
+    }
+    .app_auth_field {
+      @include width();
+      margin-bottom: 16px;
+      label {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        & > span {
+          @include inwidth(left, 86px);
+          @include font(15px, 500);
+          text-align: right;
+          margin-right: 14px;
+          color: $text;
+        }
+        input {
+          @include font(15px, 600);
+          @include inwidth(right, calc(100% - 100px));
+          padding: 10px 18px;
+          @include radius(5px);
+          border: 1px solid $border;
+        }
+      }
+      p {
+        margin-left: 96px;
+        width: calc(100% - 96px);
+      }
+    }
+  }
+}
+.steps_forms_admin {
+  padding: 24px 40px;
+  background: $white;
+  @include radius(4px);
+  box-shadow: $shadow;
+  @include inwidth(left, 460px);
+  h2 {
+    @include font(24px, 700);
+    color: $text;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  h3 {
+    @include font(16px, 700);
+    color: $text;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  .auth_form_admin {
+    @include width();
+    .app_auth_field_admin {
+      @include width();
+      margin-bottom: 16px;
+      label {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        & > span {
+          @include inwidth(left, 90px);
+          @include font(15px, 500);
+          text-align: right;
+          margin-right: 10px;
+          color: $text;
+        }
+        input {
+          @include font(15px, 600);
+          @include inwidth(right, calc(100% - 100px));
+          padding: 10px 18px;
+          @include radius(5px);
+          border: 1px solid $border;
+        }
+      }
+      p {
+        margin-left: 96px;
+        width: calc(100% - 96px);
+      }
+    }
+  }
+}

@@ -1,0 +1,257 @@
+@import "./core/colors.scss";
+@import "./core/mixins.scss";
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: $scrollbar;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: $scrollThumb;
+  border-radius: 10px;
+  &:hover {
+    background: darken($scrollThumb, 10%);
+  }
+}
+
+*,
+:after,
+:before {
+  margin: 0px;
+  padding: 0px;
+  @include box();
+}
+html,
+body {
+  @include font(15px, 400);
+  font-display: optional;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0px;
+  padding: 0px;
+  font-weight: 400;
+}
+ul,
+ol,
+li {
+  list-style: none;
+  padding-left: 0px;
+}
+main {
+  display: block;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure,
+main {
+  display: block;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  height: 0;
+  overflow: visible;
+  box-sizing: content-box;
+}
+pre {
+  font-size: 1em;
+  font-family: $mono;
+}
+a {
+  background-color: $trans;
+}
+a,
+img {
+  outline: 0;
+  border: 0px solid $trans;
+  text-decoration: none;
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+}
+b,
+strong {
+  font-weight: 700;
+}
+code,
+kbd,
+samp {
+  font-family: $mono;
+  font-size: 14px;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: $font !important;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+  &:disabled {
+    background: darken($gray, 4%);
+    color: $text;
+  }
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+input:-internal-autofill-selected {
+  font-family: $font !important;
+  background-color: $white !important;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  &:-moz-focusring {
+    outline: 1px dotted $outline;
+  }
+}
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+
+/* accordion */
+.accordion{
+  @include width();
+  .accordion__item{
+    @include width();
+    margin-bottom: 10px;
+    .accordion__heading{
+      @include width();
+      color: $black;
+      background: darken($lgray, 4%);
+      padding: 12px 20px;
+      @include box();
+      @include font(16px, 700);
+      @include radius(4px 4px 0px 0px);
+      cursor: pointer;
+      .accordion__button{
+        @include width();
+        & > span{
+          float: right;
+          & > svg {
+            @include icons(20px);
+          }
+        }
+      }
+    }
+    .accordion__panel{
+      @include width();
+      background: $lgray;
+      padding: 12px 20px;
+      @include box();
+      color: $text;
+      @include font(16px, 600);
+      line-height: 24px;
+      @include radius(0px 0px 4px 4px);
+    }
+  }
+}
+.react-datepicker{
+  font-family: $font !important;
+  font-size: 13px;
+  font-weight: 700;
+}
+.paginations{
+  @include width();
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  ul{
+    display: flex;
+    justify-content: center;
+    li{
+      @include auto();
+      margin-right: 6px;
+      cursor: pointer;
+      &:last-child{
+        margin-right: 0px;
+      }
+      a{
+        color: $text;
+        @include inwidth(left, 30px);
+        @include font(13px, 700);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $lgray;
+        @include radius(50%);
+        border: 1px solid lighten($border, 6%);
+        height: 30px;
+        & > svg {
+          @include icons(18px);
+        }
+      }
+      &.selected a{
+        color: $white;
+        background: $blue;
+        border: 1px solid $blue;
+      }
+      &.next a, &.previous a {
+        color: $blue;
+      }
+      &.disabled{
+        opacity: 0.2;
+      }
+    }
+  }
+}

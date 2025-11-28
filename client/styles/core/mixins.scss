@@ -1,0 +1,61 @@
+@import "./colors.scss";
+
+/* break point style */
+@mixin respond($breakpoint) {
+  @if ($breakpoint == large) {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == medium) {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == small) {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }
+}
+
+/* fonts styles */
+@mixin font($size, $weight) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+}
+@mixin lheight($size) {
+  height: $size;
+  line-height: $size;
+}
+
+/* width styles */
+@mixin width() {
+  float: left;
+  width: 100%;
+}
+@mixin auto() {
+  float: left;
+  width: auto;
+}
+@mixin inwidth($left, $width) {
+  float: $left;
+  width: $width;
+}
+
+// icons
+@mixin icons($size) {
+  float: left;
+  width: $size;
+  height: $size;
+}
+
+/* box styles */
+@mixin box() {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+@mixin radius($radius: 4px) {
+  border-radius: $radius;
+}

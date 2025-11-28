@@ -1,0 +1,10 @@
+@import "../core/colors.scss";
+@import "../core/mixins.scss";
+
+.app_logo {
+  float: left;
+  a {
+    @include font(24px, 700);
+    color: $blue;
+  }
+}

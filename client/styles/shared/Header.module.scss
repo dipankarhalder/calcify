@@ -1,0 +1,10 @@
+@import "../core/mixins.scss";
+
+.app_header{
+  @include width();
+}
+.app_head_wrapper {
+  @include width();
+  padding: 20px 0px;
+  @include box();
+}

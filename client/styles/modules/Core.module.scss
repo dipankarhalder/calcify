@@ -1,0 +1,220 @@
+@import "../core/mixins.scss";
+
+/* main container */
+.app_container {
+  margin: 0px auto;
+  max-width: 1120px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+.app_core_layout,
+.app_main_wrapper {
+  @include width();
+}
+.app_auth_wrapper {
+  @include width();
+}
+.wrapp_with_top_space {
+  @include width();
+  margin-top: 30px;
+}
+
+/* blank page style */
+.app_blank_page {
+  @include width();
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include font(15px, 600);
+  color: $text;
+}
+
+/* error message */
+.app_error_msg {
+  @include width();
+  @include font(14px, 600);
+  @include lheight(24px);
+  color: $red;
+  & > svg {
+    @include icons(14px);
+    margin: 5px 4px 0px 0px;
+    path {
+      fill: $red;
+    }
+  }
+}
+
+/* Custom Drop Down */
+.mainSelCover {
+  @include auto();
+  position: relative;
+  .selectMainView {
+    float: left;
+    display: flex;
+    height: 30px;
+    padding: 0px 10px 0px 14px;
+    @include radius(4px);
+    align-items: center;
+    border: 1px solid $border;
+    & > p {
+      @include font(14px, 600);
+      cursor: pointer;
+      line-height: 30px;
+      height: 30px;
+    }
+    & > span {
+      float: left;
+      margin-left: 10px;
+      margin-top: 0px;
+      & > svg {
+        @include icons(18px);
+      }
+      &.closeDd {
+        cursor: pointer;
+        & > svg {
+          @include icons(15px);
+        }
+      }
+    }
+  }
+  .selBody {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    z-index: 1;
+    ul {
+      @include width();
+      @include radius(4px);
+      background: $white;
+      border-left: 1px solid $border;
+      border-right: 1px solid $border;
+      border-bottom: 1px solid $border;
+      max-height: 160px;
+      overflow: auto;
+      li {
+        @include width();
+        padding: 4px 14px;
+        cursor: pointer;
+        @include font(13px, 600);
+        border-bottom: 1px solid lighten($border, 10%);
+      }
+    }
+  }
+}
+
+/* 404 not found */
+.full_page_width_height {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  h2 {
+    position: fixed;
+    bottom: -6.8rem;
+    left: 50%;
+    color: $blue;
+    opacity: 0.04;
+    z-index: -1;
+    @include font(300px, 700);
+    transform: translateX(-50%);
+  }
+  h6 {
+    @include font(20px, 700);
+    color: $blue;
+  }
+  a {
+    @include font(14px, 700);
+    margin-top: 60px;
+    padding: 8px 20px;
+    @include radius(4px);
+    background: $blue;
+    color: $white;
+  }
+}
+
+/* file upload */
+.appUploadField {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+  & > span {
+    text-align: right;
+    @include inwidth(left, 102px);
+    margin-right: 10px;
+  }
+  .appFiles {
+    @include auto();
+    input {
+      color: $text;
+      @include font(15px, 600);
+      @include width();
+      padding: 7px 15px;
+      @include radius(5px);
+      border: 1px solid $border;
+      display: none;
+    }
+    .uploadItmeData {
+      @include auto();
+      background: darken($lgray, 4%);
+      padding-right: 18px;
+      @include radius(4px);
+      & > span {
+        padding: 4px;
+        @include icons(36px);
+        margin-right: 16px;
+        @include radius(4px);
+        background: $white;
+        color: $text;
+        border: 1px solid $border;
+        & > svg {
+          color: $blue;
+          @include icons(26px);
+        }
+      }
+      p {
+        @include auto();
+        padding: 0px;
+        height: 36px;
+        line-height: 36px;
+        @include font(15px, 600);
+      }
+    }
+  }
+}
+
+/* Toast message */
+.Toastify__toast-body {
+  @include font(14px, 700);
+}
+
+.paginations {
+  @include width();
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  button {
+    color: $text;
+    @include inwidth(left, 30px);
+    @include font(13px, 700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $lgray;
+    @include radius(50%);
+    border: 1px solid lighten($border, 6%);
+    height: 30px;
+    margin: 0 4px;
+    cursor: pointer;
+    &:disabled,
+    &[disabled] {
+      color: $white;
+      background: $blue;
+      border: 1px solid $blue;
+    }
+  }
+}

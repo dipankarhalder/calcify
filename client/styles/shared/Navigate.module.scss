@@ -1,0 +1,122 @@
+@import "../core/colors.scss";
+@import "../core/mixins.scss";
+
+.app_navigate {
+  float: right;
+  & > ul {
+    @include auto();
+    & > li {
+      @include auto();
+      margin-left: 50px;
+      position: relative;
+      a,
+      span {
+        color: $text;
+        @include auto();
+        cursor: pointer;
+        @include font(15px, 700);
+        transition: 0.5s;
+        border-bottom: 1px solid $trans;
+        &.al_center{
+          display: flex;
+          align-items: center;
+          & > svg {
+            margin-left: 6px;
+          }
+        }
+        &:hover {
+          color: $blue;
+          transition: 0.5s;
+        }
+      }
+      &.navActv a{
+        color: $blue;
+        border-bottom: 1px solid $blue;
+      }
+      .dropdwn {
+        top: 100%;
+        right: -20px;
+        width: 130px;
+        display: none;
+        position: absolute;
+        padding-top: 10px;
+        z-index: 3;
+        & > ul {
+          @include width();
+          @include radius(4px);
+          background: $white;
+          position: relative;
+          padding: 6px 0;
+          box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.2);
+          &::after {
+            top: -6px;
+            right: 32px;
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: $white;
+            transform: rotate(45deg);
+          }
+          & > li {
+            @include width();
+            a {
+              @include box();
+              padding: 4px 14px;
+              @include width();
+              @include font(14px, 700);
+            }
+          }
+        }
+      }
+      &:hover .dropdwn {
+        display: inline-block;
+        & > ul > li.navActv > a{
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+.full_width_row{
+  @include width();
+  margin-top: 40px;
+  ul{
+    @include width();
+    li{
+      @include inwidth(left, auto);
+      @include font(14px, 700);
+      margin-right: 10px;
+      a {
+        color: $text;
+        padding: 8px 18px;
+        @include radius(4px);
+        background: lighten($bgray, 20%);
+      }
+      &.navActv a{
+        color: $blue;
+        background: lighten($bgray, 8%);
+      }
+    }
+  }
+}
+
+.surveyLink{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  @include icons(40px);
+  a{
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include icons(40px);
+    background: $btn;
+    @include radius(50%);
+    & > svg{
+      @include icons(20px);
+    }
+  }
+}

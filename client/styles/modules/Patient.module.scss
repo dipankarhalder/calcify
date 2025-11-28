@@ -1,0 +1,2525 @@
+@import "../core/mixins.scss";
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app_patient_wrapper {
+  @include width();
+  margin-top: 20px;
+}
+.leftside {
+  @include inwidth(left, 220px);
+  margin-right: 20px;
+}
+.medicine_wrapper {
+  @include inwidth(right, calc(100% - 240px));
+  .heading_with_drop {
+    @include width();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+      @include auto();
+      margin: 4px 0px;
+      @include font(18px, 700);
+      color: $blue;
+    }
+  }
+  .medi_base {
+    @include width();
+    .prescribedItems {
+      @include width();
+      .prescribeCurrent {
+        @include width();
+        .topDayInfo {
+          @include width();
+          margin: 20px 0px 10px;
+          p {
+            @include auto();
+            @include font(14px, 700);
+            margin-right: 60px;
+            text-transform: lowercase;
+            & > span {
+              color: lighten($text, 10%);
+              @include inwidth(left, auto);
+              @include font(14px, 600);
+              margin-right: 16px;
+              text-transform: capitalize;
+            }
+          }
+          b {
+            @include inwidth(right, auto);
+            @include font(12px, 700);
+            text-transform: lowercase;
+            text-decoration: underline;
+            cursor: pointer;
+            color: $blue;
+          }
+        }
+        .bottomDayInfo {
+          @include width();
+          margin: 10px 0px 0px;
+          p {
+            @include width();
+            @include font(14px, 600);
+            margin-right: 60px;
+            color: lighten($text, 4%);
+            & > span {
+              color: $text;
+              @include inwidth(left, 90px);
+              @include font(14px, 700);
+            }
+          }
+        }
+        .dayWiseFoodItem {
+          @include width();
+          @include radius(4px);
+          padding: 12px 18px;
+          margin-bottom: 10px;
+          background: $gray;
+          .dietMainInfo,
+          .dietFoodName,
+          .dietFoodCalcium,
+          .dietFoodCalories,
+          .dietFoodQty {
+            float: left;
+            p {
+              @include width();
+              @include font(14px, 700);
+              & > span {
+                @include width();
+                color: $text;
+                @include font(12px, 500);
+              }
+            }
+          }
+          .dietMainInfo {
+            width: 20%;
+          }
+          .dietFoodName {
+            width: 41%;
+          }
+          .dietFoodCalcium {
+            width: 13%;
+          }
+          .dietFoodCalories {
+            width: 13%;
+          }
+          .dietFoodQty {
+            width: 13%;
+          }
+        }
+        .dayWiseExcerItem {
+          @include width();
+          @include radius(4px);
+          padding: 12px 18px;
+          margin-bottom: 10px;
+          background: $gray;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          .imgDisplayItem {
+            @include inwidth(left, 20%);
+            & > span {
+              @include width();
+              overflow: hidden;
+              & > span {
+                float: left;
+                @include radius(4px);
+              }
+            }
+          }
+          .excerName,
+          .excerTime,
+          .excerCal,
+          .excerDur,
+          .excerDesc {
+            float: left;
+            p {
+              @include width();
+              @include font(14px, 700);
+              & > span {
+                @include width();
+                color: $text;
+                @include font(12px, 500);
+              }
+            }
+          }
+          .excerName {
+            width: 20%;
+            @include box();
+            padding-left: 16px;
+          }
+          .excerTime {
+            width: 20%;
+          }
+          .excerCal {
+            width: 20%;
+          }
+          .excerDur {
+            width: 20%;
+          }
+          .excerDesc {
+            width: 100%;
+            margin-top: 10px;
+            p {
+              @include width();
+              color: darken($text, 10%);
+              @include font(12px, 600);
+              & > span {
+                @include width();
+                color: lighten($text, 20%);
+                @include font(12px, 500);
+                margin-top: 10px;
+                margin-bottom: 4px;
+              }
+            }
+          }
+        }
+        & > a {
+          @include inwidth(left, auto);
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-top: 30px;
+          margin-bottom: 80px;
+          color: $blue;
+          @include font(13px, 700);
+        }
+      }
+      .medicine_list {
+        @include width();
+        margin-top: 20px;
+        h6 {
+          @include width();
+          @include font(13px, 700);
+          color: $black;
+          margin-bottom: 6px;
+        }
+        .medicine_repeat {
+          @include width();
+          padding: 14px 18px;
+          @include box();
+          @include radius(4px);
+          margin-bottom: 6px;
+          background: $lgray;
+          border: 1px solid lighten($border, 10%);
+          p {
+            @include inwidth(left, auto);
+            @include font(15px, 600);
+            margin-bottom: 4px;
+            color: $text;
+            & > span {
+              @include font(14px, 700);
+              color: $black;
+            }
+            &:first-child {
+              margin-left: 0px;
+            }
+          }
+          .in_item_medicin {
+            @include width();
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid lighten($border, 10%);
+            h5 {
+              @include auto();
+              @include font(16px, 700);
+              color: $blue;
+              margin-bottom: 4px;
+            }
+            .medi_head_right {
+              @include width();
+              p {
+                @include inwidth(left, auto);
+                @include font(14px, 600);
+                margin-left: 40px;
+                margin-bottom: 4px;
+                color: $text;
+                & > span {
+                  @include font(14px, 700);
+                  color: $black;
+                }
+                &:first-child {
+                  margin-left: 0px;
+                }
+              }
+            }
+            .medicine_items_lst {
+              display: flex;
+              @include width();
+              justify-content: space-between;
+              p {
+                @include inwidth(left, auto);
+                @include font(14px, 600);
+                margin-left: 40px;
+                color: $text;
+                & > span {
+                  @include font(14px, 700);
+                  color: $black;
+                }
+                &:first-child {
+                  margin-left: 0px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.diet_list_cover {
+  @include width();
+  h6 {
+    @include width();
+    @include font(13px, 700);
+    color: $blue;
+    margin-bottom: 16px;
+  }
+  .diet_list_repeat_cover {
+    @include width();
+    padding: 10px 18px;
+    @include box();
+    @include radius(4px);
+    margin-bottom: 40px;
+    background: $lgray;
+    border: 1px solid lighten($border, 10%);
+    .diet_list_repeat {
+      @include width();
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid lighten($border, 10%);
+      &:last-child {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        border-bottom: 0px solid $trans;
+      }
+      & > h4 {
+        width: 20%;
+        color: lighten($text, 10%);
+        @include font(13px, 600);
+        & > span {
+          @include inwidth(left, 80px);
+          margin-right: 10px;
+          @include font(14px, 700);
+          color: $black;
+        }
+      }
+      & > h5 {
+        width: 50%;
+        color: $text;
+        padding: 0px 30px;
+        @include box();
+        @include font(14px, 600);
+      }
+      p {
+        @include font(14px, 700);
+        color: $black;
+        & > span {
+          @include font(14px, 500);
+          color: $text;
+          margin-top: 2px;
+        }
+        &.cal {
+          width: 16%;
+        }
+        &.calry {
+          width: 14%;
+        }
+      }
+    }
+    p.notes {
+      padding: 10px 0px;
+      @include width();
+      @include font(14px, 500);
+      color: $text;
+      & > span {
+        @include font(14px, 700);
+        color: $black;
+        margin-top: 2px;
+      }
+    }
+  }
+}
+.doctor_list_cover {
+  @include width();
+  h3 {
+    @include width();
+    margin: 26px 0px 30px;
+    @include font(18px, 700);
+    color: $blue;
+  }
+  .filterSearch {
+    @include width();
+    margin-bottom: 20px;
+    .filter {
+      @include auto();
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      p {
+        @include font(13px, 700);
+        @include auto();
+        margin-right: 10px;
+      }
+      ul {
+        @include auto();
+        li {
+          color: $text;
+          @include auto();
+          cursor: pointer;
+          padding: 0px 18px;
+          height: 36px;
+          line-height: 36px;
+          @include font(13px, 700);
+          margin-right: 4px;
+          @include radius(4px);
+          border: 1px solid $border;
+          &.filActv {
+            background: $blue;
+            color: $white;
+            border: 1px solid $blue;
+          }
+        }
+      }
+      & > span {
+        @include icons(22px);
+        margin-left: 10px;
+        & > svg {
+          color: lighten($text, 10%);
+          @include icons(20px);
+          margin: 1px 0px 0px 1px;
+        }
+      }
+    }
+    .searchbar {
+      @include inwidth(right, auto);
+      margin-left: 50px;
+      display: flex;
+      align-items: center;
+      .resetItm {
+        @include icons(22px);
+        margin-right: 10px;
+        & > svg {
+          color: lighten($text, 10%);
+          @include icons(20px);
+          margin: 1px 0px 0px 1px;
+        }
+      }
+      .app_auth_field {
+        @include auto();
+        label {
+          @include auto();
+          input {
+            @include inwidth(left, 260px);
+            @include font(13px, 700);
+            height: 36px;
+            padding: 0px 12px;
+            border: 1px solid $border;
+            @include radius(4px 0px 0px 4px);
+          }
+        }
+      }
+      .app_auth_btn {
+        @include auto();
+        button {
+          @include inwidth(left, auto);
+          @include font(13px, 700);
+          height: 36px;
+          padding: 0px 20px;
+          background: $blue;
+          color: $white;
+          cursor: pointer;
+          border: 0px solid $trans;
+          @include radius(0px 4px 4px 0px);
+        }
+      }
+    }
+  }
+  .doctorList {
+    @include width();
+    .itemDoctor {
+      @include inwidth(left, 23%);
+      margin-right: 2.66%;
+      margin-bottom: 50px;
+      &:nth-child(4n + 4) {
+        margin-right: 0px;
+      }
+      & > span {
+        @include width();
+        height: 120px;
+        @include radius(4px);
+        background: darken($gray, 6%);
+        margin-bottom: 10px;
+      }
+      h4 {
+        @include width();
+        margin-bottom: 6px;
+        a {
+          @include auto();
+          @include font(15px, 700);
+          color: $blue;
+        }
+      }
+      p {
+        @include width();
+        @include font(13px, 700);
+        color: $text;
+        & > span {
+          color: lighten($text, 10%);
+          margin-right: 8px;
+          @include font(13px, 600);
+        }
+      }
+    }
+  }
+}
+.faq_cover {
+  @include width();
+  .faq_wrapper {
+    @include width();
+    h3 {
+      @include width();
+      color: $blue;
+      @include font(18px, 700);
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+  }
+}
+.dashboard_wrapper {
+  @include width();
+  .dash_container {
+    @include width();
+    margin-top: 30px;
+    .dashboard_patient_wrapper {
+      @include inwidth(right, calc(100% - 240px));
+      .dashboard_tab_items {
+        @include width();
+        .tab_dash_list {
+          @include width();
+          ul {
+            @include width();
+            li {
+              color: $text;
+              background: $lgray;
+              padding: 9px 40px;
+              cursor: pointer;
+              @include auto();
+              margin-right: 14px;
+              @include radius(4px 4px 0px 0px);
+              @include font(14px, 700);
+              &.tab_actv {
+                color: $white;
+                background: $blue;
+              }
+            }
+          }
+        }
+        .tab_patient_body {
+          @include width();
+          .tab_pat_wrapper {
+            @include box();
+            @include width();
+            padding: 16px 18px;
+            box-shadow: 0px 0px 6px rgb(217 217 217 / 45%);
+            h3 {
+              @include width();
+              @include font(15px, 700);
+              color: $blue;
+              margin-bottom: 10px;
+              margin-top: 10px;
+              & > span {
+                @include inwidth(right, auto);
+                @include font(13px, 700);
+                text-decoration: underline;
+                cursor: pointer;
+              }
+            }
+            .list_pat_option {
+              @include width();
+              ul {
+                @include width();
+                display: flex;
+                flex-wrap: wrap;
+                li.notEligible {
+                  @include width();
+                  padding: 40px 18px;
+                  @include box();
+                  @include radius(4px);
+                  margin-right: 0px;
+                  margin-top: 10px;
+                  text-align: center;
+                  color: $text;
+                  @include font(14px, 600);
+                }
+                li {
+                  @include inwidth(left, 32%);
+                  padding: 18px;
+                  @include box();
+                  @include radius(4px);
+                  background: darken($lgray, 0.5%);
+                  border: 1px solid lighten($border, 10%);
+                  margin-right: 2%;
+                  margin-bottom: 16px;
+                  cursor: pointer;
+                  position: relative;
+                  &:nth-child(3n + 3) {
+                    margin-right: 0px;
+                  }
+                  h4 {
+                    @include width();
+                    text-align: center;
+                    @include font(19px, 700);
+                    color: $black;
+                    margin-bottom: 12px;
+                    margin-top: 0px;
+                  }
+                  h5 {
+                    @include width();
+                    text-align: center;
+                    @include font(13px, 700);
+                    color: darken($blue, 4%);
+                    margin-bottom: 20px;
+                  }
+                  .in_run_test {
+                    @include width();
+                    padding-bottom: 0px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    & > span {
+                      padding: 10px 10px 4px 10px;
+                      & > svg {
+                        color: $text;
+                        @include icons(30px);
+                      }
+                    }
+                    em {
+                      @include width();
+                      font-style: normal;
+                      @include font(13px, 700);
+                      color: $black;
+                      margin-bottom: 0px;
+                      display: flex;
+                      justify-content: center;
+                      & > span {
+                        @include font(12px, 500);
+                        margin-right: 10px;
+                        @include inwidth(left, 90px);
+                      }
+                    }
+                    h4 {
+                      text-align: center;
+                    }
+                    h6 {
+                      @include width();
+                      @include font(13px, 700);
+                      display: flex;
+                      justify-content: center;
+                      & > span {
+                        @include font(12px, 500);
+                        margin-right: 10px;
+                        @include inwidth(left, auto);
+                      }
+                    }
+                    p {
+                      @include width();
+                      @include font(12px, 700);
+                      color: lighten($text, 10%);
+                      text-align: center;
+                      margin-top: 0px;
+                      margin-bottom: 0px !important;
+                      &.pbtn {
+                        width: auto;
+                        padding: 6px 14px;
+                        font-weight: 700;
+                        @include radius(4px);
+                        margin-top: 20px;
+                      }
+                    }
+                  }
+                  &.statusRisky,
+                  &.statusModerate,
+                  &.statusExcellent {
+                    cursor: default;
+                    h5 {
+                      text-align: center;
+                    }
+                    .in_run_test p {
+                      cursor: pointer;
+                    }
+                  }
+                  &.statusRisky,
+                  &.statusModerate,
+                  &.statusExcellent {
+                    h5,
+                    h6,
+                    .in_run_test > span > svg,
+                    .in_run_test p {
+                      color: $black;
+                    }
+                    .in_run_test p {
+                      margin-bottom: 8px;
+                    }
+                  }
+                  &.statusRisky {
+                    background: $statusOne;
+                    border: 1px solid $statusOne;
+                    h4 {
+                      color: darken($statusOne, 50%);
+                    }
+                    p.pbtn {
+                      color: darken($statusOne, 50%);
+                      border: 1px solid darken($statusOne, 50%);
+                    }
+                  }
+                  &.statusModerate {
+                    background: $statusTwo;
+                    border: 1px solid $statusTwo;
+                    h4 {
+                      color: darken($statusTwo, 56%);
+                    }
+                    p.pbtn {
+                      color: darken($statusTwo, 50%);
+                      border: 1px solid darken($statusTwo, 50%);
+                    }
+                  }
+                  &.statusExcellent {
+                    background: $statusThree;
+                    border: 1px solid $statusThree;
+                    h4 {
+                      color: darken($statusThree, 56%);
+                    }
+                    p.pbtn {
+                      color: darken($statusThree, 50%);
+                      border: 1px solid darken($statusThree, 50%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.leftUserInfo {
+  @include inwidth(left, 220px);
+  .infoUser {
+    @include width();
+    margin-right: 20px;
+    background: $gray;
+    padding: 16px 16px 30px 16px;
+    @include box();
+    margin-bottom: 10px;
+    @include radius(4px);
+    & > span {
+      @include width();
+      padding: 44px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & > svg {
+        @include icons(70px);
+        color: $red;
+      }
+    }
+    h4 {
+      @include width();
+      @include font(16px, 700);
+      text-align: center;
+      margin-bottom: 20px;
+      color: $red;
+    }
+    & > p {
+      @include width();
+      @include font(14px, 600);
+      text-align: center;
+      color: $text;
+    }
+    .short_avatar_profile {
+      @include inwidth(left, 100%);
+      @include radius(4px);
+      background: $lgray;
+
+      h3 {
+        color: $blue;
+        @include width();
+        margin: 20px 0px 10px;
+        @include font(16px, 700);
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        & > span {
+          color: $text;
+          @include font(14px, 700);
+        }
+      }
+
+      .detailsInfo {
+        @include width();
+
+        p {
+          @include width();
+          color: $black;
+          @include font(14px, 700);
+          margin-bottom: 6px;
+          text-align: left;
+
+          & > span {
+            color: $text;
+            @include font(14px, 600);
+            @include inwidth(left, 70px);
+          }
+
+          &:last-child {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+  .userBtns {
+    @include width();
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    & > span {
+      padding: 8px 16px;
+      background: $blue;
+      color: $white;
+      @include font(13px, 700);
+      @include radius(4px);
+      cursor: pointer;
+    }
+  }
+}
+.selectDateDiet {
+  @include inwidth(right, auto);
+  margin-right: 14px;
+  position: relative;
+  input {
+    height: 32px;
+    line-height: 32px;
+    @include radius(4px);
+    padding: 0px 16px;
+    cursor: pointer;
+    color: $text;
+    @include font(14px, 700);
+    background: darken($lgray, 2%);
+    border: 1px solid $border;
+  }
+  & > svg {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+}
+.bodyOfDietCOntent {
+  @include width();
+  background: $gray;
+  padding: 20px 30px;
+  @include box();
+  margin-top: 18px;
+  @include radius(4px);
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    @include font(14px, 600);
+    color: $text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & > svg {
+      opacity: 0.2;
+      @include icons(38px);
+      margin-bottom: 6px;
+    }
+  }
+}
+.dietPlanList {
+  @include width();
+  margin-top: 18px;
+  .dayWiseFoodItem {
+    @include width();
+    @include radius(4px);
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    background: $gray;
+    .dietMainInfo,
+    .dietFoodName,
+    .dietFoodCalcium,
+    .dietFoodCalories,
+    .dietFoodQty {
+      float: left;
+      p {
+        @include width();
+        @include font(14px, 700);
+        & > span {
+          @include width();
+          color: $text;
+          @include font(12px, 500);
+        }
+      }
+    }
+    .dietMainInfo {
+      width: 20%;
+    }
+    .dietFoodName {
+      width: 41%;
+    }
+    .dietFoodCalcium {
+      width: 13%;
+    }
+    .dietFoodCalories {
+      width: 13%;
+    }
+    .dietFoodQty {
+      width: 13%;
+    }
+  }
+}
+.downlaodFiles {
+  @include width();
+  margin-top: 20px;
+  margin-bottom: 50px;
+  h5 {
+    @include width();
+    @include font(18px, 700);
+    margin-bottom: 30px;
+    color: $text;
+  }
+  .appUploadFiles {
+    @include icons(70px);
+    @include radius(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $border;
+    background: $gray;
+    cursor: pointer;
+    margin-right: 20px;
+    input[type="file"] {
+      display: none;
+    }
+    & > span > svg {
+      @include icons(26px);
+    }
+  }
+  .noUpload {
+    height: 70px;
+    line-height: 70px;
+    padding: 0px 26px;
+    @include box();
+    background: $gray;
+    color: $text;
+    @include radius(4px);
+    @include font(14px, 700);
+    border: 1px solid $border;
+    @include auto();
+  }
+  .uploadListData {
+    @include width();
+    display: flex;
+    align-items: center;
+    padding: 0px 26px;
+    @include box();
+    @include inwidth(right, calc(100% - 90px));
+    .uploadImgList {
+      @include inwidth(left, 120px);
+      display: flex;
+      margin-right: 10px;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 70px;
+      background: $gray;
+      padding: 0px 16px;
+      @include radius(4px);
+      border: 1px solid $border;
+      & > span {
+        float: left;
+        & > svg {
+          @include icons(26px);
+        }
+      }
+      p {
+        @include width();
+        color: $text;
+        @include font(13px, 700);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+.wrapper_popup_overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: auto;
+  padding-bottom: 70px;
+  padding-top: 6rem;
+  align-items: flex-start;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  .wrapper_white_lrg {
+    background: $white;
+    padding: 40px 50px;
+    @include radius(4px);
+    position: relative;
+    width: 840px;
+    .closePop {
+      top: 20px;
+      right: 18px;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      & > svg {
+        @include icons(20px);
+      }
+    }
+    h3 {
+      float: left;
+      @include font(18px, 700);
+      margin-left: 112px;
+      margin-bottom: 30px;
+      color: $text;
+    }
+  }
+  .wrapper_choose_opt {
+    background: $white;
+    padding: 40px 50px;
+    @include radius(4px);
+    position: relative;
+    width: 560px;
+    .closePop {
+      top: 20px;
+      right: 18px;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      & > svg {
+        @include icons(20px);
+      }
+    }
+    h3 {
+      @include width();
+      @include font(18px, 700);
+      text-align: center;
+      margin-bottom: 30px;
+      color: $text;
+    }
+  }
+  .wrapper_choose_self {
+    background: $white;
+    padding: 40px 50px;
+    @include radius(4px);
+    position: relative;
+    width: 900px;
+    .closePop {
+      top: 20px;
+      right: 18px;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      & > svg {
+        @include icons(20px);
+      }
+    }
+    h3 {
+      @include width();
+      @include font(18px, 700);
+      text-align: center;
+      margin-bottom: 30px;
+      color: $text;
+    }
+    .self_test_content_area {
+      @include width();
+      ul {
+        @include width();
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        li.notEligible {
+          @include width();
+          padding: 40px 18px;
+          @include box();
+          @include radius(4px);
+          margin-right: 0px;
+          margin-top: 10px;
+          text-align: center;
+          color: $text;
+          cursor: default;
+          @include font(14px, 600);
+          background: darken($lgray, 0.5%);
+          border: 1px solid lighten($border, 10%);
+        }
+        li {
+          float: left;
+          width: 24%;
+          cursor: pointer;
+          margin-right: 1.33%;
+          @include radius(4px);
+          @include box();
+          padding: 16px 14px;
+          margin-bottom: 14px;
+          background: #f5f5f5;
+          &:nth-child(4n + 4) {
+            margin-right: 0px;
+          }
+          h5 {
+            @include width();
+            text-align: center;
+            @include font(14px, 700);
+            color: $black;
+            margin-bottom: 20px;
+          }
+          & > span {
+            @include width();
+            text-align: center;
+            padding: 10px 10px 4px 10px;
+            & > svg {
+              color: lighten($text, 5%);
+              position: relative;
+              left: 50%;
+              transform: translateX(-50%);
+              @include icons(30px);
+            }
+          }
+          p {
+            @include width();
+            text-align: center;
+            @include font(12px, 700);
+            color: lighten($text, 5%);
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+  .wrapper_white_sec {
+    background: $white;
+    padding: 40px 50px;
+    @include radius(4px);
+    position: relative;
+    width: 560px;
+    .loadingSpinn {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include radius(4px);
+      .nbSpinner {
+        animation: rotation 1s infinite linear;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        border-top-color: rgba(0, 0, 0, 0.7);
+        height: 3em;
+        width: 3em;
+      }
+      h6 {
+        @include font(20px, 700);
+        margin-top: 20px;
+        color: $text;
+      }
+    }
+    .closePop {
+      top: 20px;
+      right: 18px;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      & > svg {
+        @include icons(20px);
+      }
+    }
+    h3 {
+      float: left;
+      @include font(18px, 700);
+      margin-left: 112px;
+      margin-bottom: 30px;
+      color: $text;
+    }
+    p.subPopTitle {
+      float: left;
+      @include font(12px, 600);
+      margin-bottom: 20px;
+      margin-left: 112px;
+      @include box();
+      color: lighten($text, 18%);
+    }
+    .item_form_cover {
+      @include width();
+      form {
+        @include width();
+      }
+      .frax_itm {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 16px;
+        & > span {
+          text-align: right;
+          @include inwidth(left, 102px);
+          margin-right: 10px;
+          & > b {
+            color: $red;
+          }
+        }
+        input,
+        textarea,
+        select {
+          @include font(15px, 600);
+          @include inwidth(right, calc(100% - 112px));
+          padding: 10px 15px;
+          @include radius(5px);
+          border: 1px solid $border;
+        }
+        input[type="file"] {
+          padding: 8px 15px;
+        }
+        p {
+          width: calc(100% - 112px);
+          margin-left: 112px;
+        }
+        select {
+          padding: 8px 15px 7px;
+        }
+        textarea {
+          height: 80px;
+          resize: none;
+        }
+        .set_public {
+          @include inwidth(right, calc(100% - 112px));
+          display: flex;
+          align-items: center;
+          .bool_item {
+            float: left;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            @include radius(4px);
+            border: 1px solid $border;
+            position: relative;
+          }
+          .bool_item_actv {
+            float: left;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            @include radius(3px);
+            border: 1px solid $blue;
+            position: relative;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 2px;
+              left: 2px;
+              width: 14px;
+              height: 14px;
+              transition: 0.3s;
+              @include radius(2px);
+              background: $blue;
+            }
+          }
+          & > p.check_box {
+            color: $text;
+            width: 100%;
+            @include font(14px, 700);
+            margin-left: 0px;
+            b {
+              color: $red;
+            }
+          }
+        }
+        .frax_wrap {
+          @include inwidth(right, calc(100% - 112px));
+          .item_frax_inside {
+            @include inwidth(left, 32%);
+            position: relative;
+            margin-right: 2%;
+            &:last-child {
+              margin-right: 0px;
+            }
+            input,
+            select {
+              @include width();
+            }
+            p {
+              @include width();
+              margin-bottom: 3px;
+              @include font(13px, 600);
+            }
+            b {
+              position: absolute;
+              @include font(13px, 600);
+              bottom: 12px;
+              right: 15px;
+            }
+          }
+          .item_frax_half {
+            @include inwidth(left, 48.5%);
+            position: relative;
+            margin-right: 3%;
+            &:last-child {
+              margin-right: 0px;
+            }
+            input,
+            select {
+              @include width();
+              color: $text;
+            }
+            p {
+              @include width();
+              margin-bottom: 3px;
+              @include font(13px, 600);
+            }
+            b {
+              position: absolute;
+              @include font(13px, 600);
+              bottom: 12px;
+              right: 15px;
+            }
+          }
+        }
+      }
+      .frax_itm_lable {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 16px;
+        & > span {
+          text-align: right;
+          @include inwidth(left, 204px);
+          margin-right: 10px;
+          & > b {
+            color: $red;
+          }
+        }
+        input {
+          @include font(15px, 600);
+          @include inwidth(right, calc(100% - 214px));
+          padding: 10px 15px;
+          @include radius(5px);
+          border: 1px solid $border;
+        }
+        p {
+          width: auto;
+          margin-left: 214px;
+        }
+      }
+      .frax_itm_btn {
+        margin-top: 16px;
+        margin-left: 112px;
+        float: left;
+        button {
+          @include auto();
+          @include font(13px, 700);
+          padding: 0px 24px;
+          height: 36px;
+          border: 0px solid $trans;
+          @include radius(5px);
+          cursor: pointer;
+          color: $white;
+          background: {
+            color: $blue;
+          }
+        }
+      }
+      .frax_cancel_btn {
+        margin-top: 16px;
+        margin-left: 10px;
+        float: left;
+        span {
+          @include auto();
+          @include font(13px, 700);
+          padding: 0px 24px;
+          height: 36px;
+          line-height: 36px;
+          border: 0px solid $trans;
+          @include radius(5px);
+          cursor: pointer;
+          color: $text;
+          background: {
+            color: darken($gray, 6%);
+          }
+        }
+      }
+      .frax_itm_dis_btn {
+        margin-left: 112px;
+        float: left;
+        & > span {
+          @include auto();
+          @include font(13px, 700);
+          padding: 0px 24px;
+          height: 36px;
+          line-height: 36px;
+          border: 0px solid $trans;
+          @include radius(5px);
+          cursor: pointer;
+          color: $text;
+          background: {
+            color: darken($gray, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+.shareUserProfile {
+  @include width();
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  .share_div {
+    @include auto();
+    .itemShare {
+      @include auto();
+      margin-right: 8px;
+      button {
+        @include auto();
+        height: 32px;
+      }
+    }
+  }
+}
+.blankMsgInPage {
+  @include width();
+  margin-top: 10px;
+  padding: 20px 30px;
+  @include box();
+  background: $lgray;
+  @include radius(4px);
+  border: 1px solid lighten($border, 10%);
+}
+.runRelationShipTest {
+  @include width();
+  border-top: 1px solid lighten($border, 10%);
+  margin-top: 10px;
+  .selectedDateItems {
+    @include width();
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    p {
+      @include auto();
+      @include font(14px, 700);
+      & > span {
+        @include auto();
+        margin-right: 8px;
+        color: $text;
+        @include font(14px, 600);
+      }
+    }
+  }
+  ul {
+    @include width();
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    li {
+      float: left;
+      width: 24%;
+      margin-right: 1.33%;
+      @include radius(4px);
+      @include box();
+      padding: 18px 24px;
+      margin-bottom: 14px;
+      background: #f5f5f5;
+      &:nth-child(4n + 4) {
+        margin-right: 0px;
+      }
+      h5 {
+        @include width();
+        text-align: left;
+        @include font(13px, 700);
+        color: $black;
+        margin-bottom: 10px;
+      }
+      .btnTest {
+        @include auto();
+        background: $blue;
+        padding: 4px 8px;
+        cursor: pointer;
+        @include radius(4px);
+        & > span {
+          @include icons(18px);
+          margin-right: 5px;
+          & > svg {
+            color: $white;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            @include icons(18px);
+          }
+        }
+        p {
+          @include auto();
+          height: 18px;
+          line-height: 18px;
+          @include font(10px, 700);
+          color: $white;
+        }
+      }
+    }
+  }
+}
+.emptyDiv {
+  @include width();
+  height: 400px;
+  background: $lgray;
+  border: 1px solid darken($lgray, 10%);
+  display: flex;
+  margin-bottom: 50px;
+  @include radius(4px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & > span {
+    @include icons(40px);
+    margin-bottom: 10px;
+    & > svg {
+      color: lighten($text, 26%);
+      @include icons(40px);
+    }
+  }
+  p {
+    color: $text;
+    @include font(15px, 600);
+  }
+}
+.form_content_area {
+  @include width();
+  margin-top: 10px;
+  form {
+    display: flex;
+  }
+  .frax_itm {
+    @include inwidth(left, 24%);
+    margin-right: 1.33%;
+    margin-bottom: 16px;
+    &:nth-child(4n + 4) {
+      margin-right: 0px;
+    }
+    & > span {
+      text-align: left;
+      @include width();
+      margin-bottom: 6px;
+      & > b {
+        color: $red;
+      }
+    }
+    input,
+    textarea,
+    select {
+      @include font(15px, 600);
+      @include width();
+      padding: 0px 15px;
+      height: 37px;
+      @include radius(5px);
+      border: 1px solid $border;
+    }
+  }
+  .frax_itm_btn {
+    float: left;
+    margin-top: 25.5px;
+    button {
+      @include auto();
+      @include font(13px, 700);
+      padding: 0px 24px;
+      height: 37px;
+      border: 0px solid $trans;
+      @include radius(5px);
+      cursor: pointer;
+      color: $white;
+      background: {
+        color: $blue;
+      }
+    }
+    .canclBtns {
+      @include auto();
+      padding: 0px 24px;
+      height: 37px;
+      @include font(13px, 700);
+      line-height: 37px;
+      border: 0px solid $trans;
+      @include radius(5px);
+      cursor: pointer;
+      margin-left: 14px;
+      color: $text;
+      background: {
+        color: darken($gray, 4%);
+      }
+    }
+  }
+}
+.content_extra {
+  @include width();
+  h5 {
+    @include width();
+    line-height: 24px;
+    @include font(15px, 700);
+    color: $blue;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  p {
+    @include width();
+    line-height: 24px;
+    @include font(15px, 600);
+    color: $text;
+    text-align: left;
+    margin-bottom: 8px;
+    b {
+      float: none;
+      width: auto;
+      margin-right: 6px;
+      color: $black;
+    }
+  }
+  b {
+    @include width();
+    line-height: 24px;
+    @include font(15px, 700);
+    color: $text;
+    text-align: left;
+  }
+  .btnwidth {
+    @include width();
+    display: flex;
+    justify-content: center;
+    & > span {
+      padding: 10px 28px;
+      @include font(13px, 700);
+      color: $white;
+      cursor: pointer;
+      background: $blue;
+      margin-top: 20px;
+      @include radius(4px);
+      &.canclBtn {
+        background: darken($gray, 6%);
+        color: $text;
+        margin-right: 16px;
+      }
+    }
+  }
+  .btnChoose {
+    @include width();
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    span {
+      @include auto();
+      padding: 12px 18px;
+      @include radius(4px);
+      background: darken($gray, 6%);
+      color: $text;
+      @include font(15px, 700);
+      margin-right: 16px;
+      transition: 0.5s;
+      cursor: pointer;
+      & > svg {
+        float: right;
+        margin-top: 3px;
+        margin-left: 10px;
+      }
+      &:last-child {
+        margin-right: 0px;
+      }
+      &:hover {
+        transition: 0.5s;
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+}
+.detailsDoctor {
+  @include width();
+  position: relative;
+  margin-top: 30px;
+  .leftDetails {
+    float: left;
+    width: 300px;
+    @include box();
+    padding: 18px 20px;
+    margin-right: 30px;
+    background: $lgray;
+    & > span {
+      @include width();
+      height: 180px;
+      margin-bottom: 16px;
+      @include radius(5px);
+      background: darken($lgray, 4%);
+    }
+    h2,
+    p {
+      @include width();
+    }
+    h2 {
+      color: $blue;
+      @include font(16px, 700);
+      margin-bottom: 14px;
+    }
+    p {
+      @include font(14px, 700);
+      margin-bottom: 2px;
+      & > span {
+        @include font(14px, 600);
+        @include inwidth(left, 60px);
+      }
+    }
+    .schBtn {
+      @include auto();
+      padding: 8px 20px;
+      background: $blue;
+      color: $white;
+      cursor: pointer;
+      margin-top: 20px;
+      @include radius(5px);
+      @include font(12px, 700);
+    }
+  }
+  .doctDescpt {
+    @include inwidth(right, calc(100% - 330px));
+    h4 {
+      @include width();
+      @include font(16px, 700);
+      margin-bottom: 10px;
+    }
+    p {
+      @include width();
+      @include font(13px, 500);
+    }
+  }
+}
+.fieldAppPopup {
+  height: 36px;
+  line-height: 36px;
+  @include width();
+  @include radius(4px);
+  @include font(14px, 600);
+  background: $white;
+  color: $text;
+  border: 1px solid $border;
+}
+.popupOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: auto;
+  padding-bottom: 70px;
+  padding-top: 6rem;
+  align-items: flex-start;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  .whiteAreaSec {
+    background: $white;
+    padding: 40px 50px;
+    @include radius(4px);
+    position: relative;
+    width: 560px;
+    .closePop {
+      top: 20px;
+      right: 18px;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      & > svg {
+        @include icons(20px);
+      }
+    }
+    h3 {
+      float: left;
+      @include font(18px, 700);
+      margin-left: 112px;
+      margin-bottom: 30px;
+      color: $text;
+    }
+    .booking_area {
+      @include width();
+      .filedRow {
+        @include width();
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 14px;
+        & > span {
+          @include inwidth(left, 100px);
+          text-align: right;
+          margin-right: 16px;
+          @include font(13px, 700);
+          color: $text;
+        }
+        .selBox {
+          @include inwidth(right, calc(100% - 116px));
+          input,
+          textarea {
+            @extend .fieldAppPopup;
+            padding: 0px 16px;
+          }
+          textarea {
+            height: 90px;
+            resize: none;
+          }
+          select {
+            @extend .fieldAppPopup;
+            padding: 0px 24px 0px 14px;
+          }
+          .boxSect {
+            background: darken($gray, 4%);
+            @extend .fieldAppPopup;
+            padding: 0px 16px;
+          }
+        }
+        .btnBook {
+          @include auto();
+          margin-left: 116px;
+          padding: 10px 22px;
+          background: $blue;
+          color: $white;
+          cursor: pointer;
+          @include radius(4px);
+          @include font(13px, 700);
+        }
+        .btnBookDis {
+          @include auto();
+          margin-left: 116px;
+          padding: 10px 22px;
+          background: darken($gray, 10%);
+          color: $text;
+          cursor: pointer;
+          @include radius(4px);
+          @include font(13px, 700);
+        }
+      }
+    }
+  }
+}
+.wrapper_white_email {
+  background: $white;
+  padding: 40px 50px;
+  @include radius(4px);
+  position: relative;
+  width: 520px;
+  .closePop {
+    top: 20px;
+    right: 18px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    & > svg {
+      @include icons(20px);
+    }
+  }
+  .emailIc {
+    @include width();
+    margin-top: 30px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      @include icons(80px);
+      background: $gray;
+      transform: translateX(-50%);
+      @include radius(50%);
+      z-index: 0;
+    }
+    & > svg {
+      color: $blue;
+      @include icons(36px);
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 22px;
+      z-index: 1;
+    }
+  }
+  h3 {
+    @include width();
+    @include font(18px, 700);
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 30px;
+    color: $blue;
+    position: relative;
+    z-index: 1;
+  }
+  .sendingEmail {
+    @include width();
+    margin-bottom: 30px;
+    p {
+      @include font(14px, 600);
+      text-align: center;
+      line-height: 22px;
+      & > span {
+        color: $blue;
+      }
+    }
+  }
+}
+.relDispaly {
+  @include width();
+  p {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include font(15px, 600);
+    margin-bottom: 16px;
+    & > span {
+      @include inwidth(left, 102px);
+      text-align: right;
+      margin-right: 10px;
+      color: $text;
+    }
+    b {
+      @include font(14px, 700);
+      @include inwidth(left, calc(100% - 112px));
+      border: 1px solid $border;
+      padding: 10px 15px;
+      @include radius(5px);
+      background: darken($gray, 4%);
+      cursor: not-allowed;
+    }
+  }
+}
+
+.wrapper_popup_overlay_ost {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: auto;
+  padding-bottom: 70px;
+  padding-top: 6rem;
+  align-items: flex-start;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  .wrapper_white_sec_ost {
+    background: $white;
+    padding: 40px 50px;
+    @include radius(4px);
+    position: relative;
+    width: 820px;
+    .closePop {
+      top: 20px;
+      right: 18px;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      & > svg {
+        @include icons(20px);
+      }
+    }
+    h3 {
+      @include width();
+      @include font(18px, 700);
+      text-align: center;
+      margin-bottom: 4px;
+      color: $text;
+    }
+    & > p {
+      @include width();
+      text-align: center;
+      @include font(12px, 600);
+      margin-bottom: 40px;
+      @include box();
+      color: lighten($text, 18%);
+    }
+    .ost_info_form {
+      @include inwidth(left, 100%);
+      .left_info_ost {
+        @include inwidth(left, 62%);
+      }
+      .right_info_ost {
+        @include inwidth(right, 34%);
+        .row_ost {
+          @include inwidth(left, 100%);
+          margin-bottom: 15px;
+          & > h4 {
+            @include width();
+            margin-bottom: 4px;
+            @include font(10px, 600);
+            text-decoration: underline;
+            color: darken($text, 50%);
+          }
+          & > p {
+            @include width();
+            @include font(10px, 600);
+            color: $text;
+            & > span {
+              @include inwidth(left, 150px);
+            }
+          }
+        }
+      }
+    }
+    .item_form_cover {
+      @include width();
+      form {
+        @include width();
+      }
+      .frax_itm {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 16px;
+        & > span {
+          text-align: right;
+          @include inwidth(left, 152px);
+          margin-right: 10px;
+          & > b {
+            color: $red;
+          }
+        }
+        input,
+        textarea,
+        select {
+          @include font(15px, 600);
+          @include inwidth(right, calc(100% - 162px));
+          padding: 10px 15px;
+          @include radius(5px);
+          border: 1px solid $border;
+        }
+        input[type="file"] {
+          padding: 8px 15px;
+        }
+        p {
+          width: calc(100% - 162px);
+          margin-left: 152px;
+        }
+        select {
+          padding: 8px 15px 7px;
+        }
+        textarea {
+          height: 80px;
+          resize: none;
+        }
+        .set_public {
+          @include inwidth(right, calc(100% - 162px));
+          display: flex;
+          align-items: center;
+          .bool_item {
+            float: left;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            @include radius(4px);
+            border: 1px solid $border;
+            position: relative;
+          }
+          .bool_item_actv {
+            float: left;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            @include radius(3px);
+            border: 1px solid $blue;
+            position: relative;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 2px;
+              left: 2px;
+              width: 14px;
+              height: 14px;
+              transition: 0.3s;
+              @include radius(2px);
+              background: $blue;
+            }
+          }
+          & > p.check_box {
+            color: $text;
+            width: 100%;
+            @include font(14px, 700);
+            margin-left: 0px;
+            b {
+              color: $red;
+            }
+          }
+        }
+        .frax_wrap {
+          @include inwidth(right, calc(100% - 162px));
+          .item_frax_inside {
+            @include inwidth(left, 32%);
+            position: relative;
+            margin-right: 2%;
+            &:last-child {
+              margin-right: 0px;
+            }
+            input,
+            select {
+              @include width();
+            }
+            p {
+              @include width();
+              margin-bottom: 3px;
+              @include font(13px, 600);
+            }
+            b {
+              position: absolute;
+              @include font(13px, 600);
+              bottom: 12px;
+              right: 15px;
+            }
+          }
+          .item_frax_half {
+            @include inwidth(left, 48.5%);
+            position: relative;
+            margin-right: 3%;
+            &:last-child {
+              margin-right: 0px;
+            }
+            input,
+            select {
+              @include width();
+              color: $text;
+            }
+            p {
+              @include width();
+              margin-bottom: 3px;
+              @include font(13px, 600);
+            }
+            b {
+              position: absolute;
+              @include font(13px, 600);
+              bottom: 12px;
+              right: 15px;
+            }
+          }
+        }
+      }
+      .frax_itm_lable {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 16px;
+        & > span {
+          text-align: right;
+          @include inwidth(left, 204px);
+          margin-right: 10px;
+          & > b {
+            color: $red;
+          }
+        }
+        input {
+          @include font(15px, 600);
+          @include inwidth(right, calc(100% - 214px));
+          padding: 10px 15px;
+          @include radius(5px);
+          border: 1px solid $border;
+        }
+        p {
+          width: auto;
+          margin-left: 214px;
+        }
+      }
+      .frax_itm_btn {
+        margin-top: 16px;
+        margin-left: 162px;
+        float: left;
+        button {
+          @include auto();
+          @include font(13px, 700);
+          padding: 0px 24px;
+          height: 36px;
+          border: 0px solid $trans;
+          @include radius(5px);
+          cursor: pointer;
+          color: $white;
+          background: {
+            color: $blue;
+          }
+        }
+      }
+      .frax_cancel_btn {
+        margin-top: 16px;
+        margin-left: 10px;
+        float: left;
+        span {
+          @include auto();
+          @include font(13px, 700);
+          padding: 0px 24px;
+          height: 36px;
+          line-height: 36px;
+          border: 0px solid $trans;
+          @include radius(5px);
+          cursor: pointer;
+          color: $text;
+          background: {
+            color: darken($gray, 6%);
+          }
+        }
+      }
+      .frax_itm_dis_btn {
+        margin-left: 112px;
+        float: left;
+        & > span {
+          @include auto();
+          @include font(13px, 700);
+          padding: 0px 24px;
+          height: 36px;
+          line-height: 36px;
+          border: 0px solid $trans;
+          @include radius(5px);
+          cursor: pointer;
+          color: $text;
+          background: {
+            color: darken($gray, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.wrapper_popup_overlay_fall {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: auto;
+  padding-bottom: 70px;
+  padding-top: 6rem;
+  align-items: flex-start;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  .wrapper_white_sec_ost {
+    background: $white;
+    padding: 40px 50px;
+    @include radius(4px);
+    position: relative;
+    width: 1060px;
+    .closePop {
+      top: 20px;
+      right: 18px;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      & > svg {
+        @include icons(20px);
+      }
+    }
+    h3 {
+      @include width();
+      @include font(18px, 700);
+      text-align: center;
+      margin-bottom: 4px;
+      color: $text;
+    }
+    & > p {
+      @include width();
+      text-align: center;
+      @include font(12px, 600);
+      margin-bottom: 40px;
+      @include box();
+      color: lighten($text, 18%);
+    }
+    .fall_info_form {
+      @include inwidth(left, 100%);
+      .left_info_ost {
+        @include inwidth(left, 56%);
+      }
+      .right_info_ost {
+        @include inwidth(right, 40%);
+        .row_ost {
+          @include inwidth(left, 100%);
+          margin-bottom: 15px;
+          & > h4 {
+            @include width();
+            margin-bottom: 4px;
+            @include font(10px, 600);
+            text-decoration: underline;
+            color: darken($text, 50%);
+          }
+          & > p {
+            @include width();
+            @include font(10px, 600);
+            color: $text;
+            & > span {
+              @include inwidth(left, 150px);
+            }
+          }
+          & > ul {
+            @include width();
+            list-style: circle;
+            & > li {
+              @include width();
+              @include font(11px, 600);
+              color: $text;
+            }
+          }
+        }
+      }
+    }
+    .item_form_cover {
+      @include width();
+      form {
+        @include width();
+      }
+      .frax_itm {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 16px;
+        & > span {
+          text-align: right;
+          @include inwidth(left, 152px);
+          margin-right: 10px;
+          & > b {
+            color: $red;
+          }
+        }
+        input,
+        textarea,
+        select {
+          @include font(15px, 600);
+          @include inwidth(right, calc(100% - 162px));
+          padding: 10px 15px;
+          @include radius(5px);
+          border: 1px solid $border;
+        }
+        input[type="file"] {
+          padding: 8px 15px;
+        }
+        p {
+          width: calc(100% - 162px);
+          margin-left: 152px;
+        }
+        select {
+          padding: 8px 15px 7px;
+        }
+        textarea {
+          height: 80px;
+          resize: none;
+        }
+        .set_public {
+          @include inwidth(right, calc(100% - 162px));
+          display: flex;
+          align-items: center;
+          .bool_item {
+            float: left;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            @include radius(4px);
+            border: 1px solid $border;
+            position: relative;
+          }
+          .bool_item_actv {
+            float: left;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+            @include radius(3px);
+            border: 1px solid $blue;
+            position: relative;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 2px;
+              left: 2px;
+              width: 14px;
+              height: 14px;
+              transition: 0.3s;
+              @include radius(2px);
+              background: $blue;
+            }
+          }
+          & > p.check_box {
+            color: $text;
+            width: 100%;
+            @include font(14px, 700);
+            margin-left: 0px;
+            b {
+              color: $red;
+            }
+          }
+        }
+        .frax_wrap {
+          @include inwidth(right, calc(100% - 162px));
+          .item_frax_inside {
+            @include inwidth(left, 32%);
+            position: relative;
+            margin-right: 2%;
+            &:last-child {
+              margin-right: 0px;
+            }
+            input,
+            select {
+              @include width();
+            }
+            p {
+              @include width();
+              margin-bottom: 3px;
+              @include font(13px, 600);
+            }
+            b {
+              position: absolute;
+              @include font(13px, 600);
+              bottom: 12px;
+              right: 15px;
+            }
+          }
+          .item_frax_half {
+            @include inwidth(left, 48.5%);
+            position: relative;
+            margin-right: 3%;
+            &:last-child {
+              margin-right: 0px;
+            }
+            input,
+            select {
+              @include width();
+              color: $text;
+            }
+            p {
+              @include width();
+              margin-bottom: 3px;
+              @include font(13px, 600);
+            }
+            b {
+              position: absolute;
+              @include font(13px, 600);
+              bottom: 12px;
+              right: 15px;
+            }
+          }
+        }
+      }
+      .frax_itm_lable {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 16px;
+        & > span {
+          text-align: right;
+          @include inwidth(left, 310px);
+          margin-right: 10px;
+          & > b {
+            color: $red;
+          }
+        }
+        input {
+          @include font(15px, 600);
+          @include inwidth(right, calc(100% - 320px));
+          padding: 10px 15px;
+          @include radius(5px);
+          border: 1px solid $border;
+        }
+        p {
+          width: auto;
+          margin-left: 320px;
+        }
+      }
+      .frax_itm_btn {
+        margin-top: 16px;
+        margin-left: 320px;
+        float: left;
+        button {
+          @include auto();
+          @include font(13px, 700);
+          padding: 0px 24px;
+          height: 36px;
+          border: 0px solid $trans;
+          @include radius(5px);
+          cursor: pointer;
+          color: $white;
+          background: {
+            color: $blue;
+          }
+        }
+      }
+      .frax_cancel_btn {
+        margin-top: 16px;
+        margin-left: 10px;
+        float: left;
+        span {
+          @include auto();
+          @include font(13px, 700);
+          padding: 0px 24px;
+          height: 36px;
+          line-height: 36px;
+          border: 0px solid $trans;
+          @include radius(5px);
+          cursor: pointer;
+          color: $text;
+          background: {
+            color: darken($gray, 6%);
+          }
+        }
+      }
+      .frax_itm_dis_btn {
+        margin-left: 112px;
+        float: left;
+        & > span {
+          @include auto();
+          @include font(13px, 700);
+          padding: 0px 24px;
+          height: 36px;
+          line-height: 36px;
+          border: 0px solid $trans;
+          @include radius(5px);
+          cursor: pointer;
+          color: $text;
+          background: {
+            color: darken($gray, 10%);
+          }
+        }
+      }
+    }
+  }
+}
